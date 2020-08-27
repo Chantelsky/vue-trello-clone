@@ -7,7 +7,7 @@ class="task"
 :transferData="{
     type: 'task',
     fromColumnIndex: columnIndex,
-    fromTaskIndex: taskIndex
+    fromTaskIndex: taskIndex,
 }"
         @click="goToTask(task)"
 >
