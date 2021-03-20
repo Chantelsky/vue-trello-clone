@@ -1,7 +1,7 @@
 <template>
   <div class="board">
     <div class="flex flex-row items-start">
-      <BoardColumn 
+      <BoardColumn
         v-for="(column, $columnIndex) of board.columns"
         :key="$columnIndex"
         :column="column"
@@ -32,25 +32,25 @@ import BoardColumn from '@/components/BoardColumn'
 export default {
   components: {
     BoardColumn
-    },
-  data() {
+  },
+  data () {
     return {
-      newColumnName: '',
+      newColumnName: ''
     }
   },
   computed: {
     ...mapState(['board']),
-    isTaskOpen() {
+    isTaskOpen () {
       return this.$route.name === 'task'
-    },
+    }
   },
   methods: {
-    close() {
+    close () {
       this.$router.push({ name: 'board' })
     },
-    createColumn() {
+    createColumn () {
       this.$store.commit('CREATE_COLUMN', {
-        name: this.newColumnName,
+        name: this.newColumnName
       })
       this.newColumnName = ''
     }
